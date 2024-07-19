@@ -3,6 +3,16 @@ import instagramIcon from '@/app/assets/instagram-icon.svg'
 import twitterIcon from '@/app/assets/twitter-icon.svg'
 import whatsappIcon from '@/app/assets/whatsapp-icon.svg'
 import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuLabel,
+  DropdownMenuSeparator,
+  DropdownMenuSub,
+  DropdownMenuSubTrigger,
+  DropdownMenuTrigger,
+} from '@/components/ui/dropdown-menu'
+import {
   NavigationMenu,
   NavigationMenuContent,
   NavigationMenuItem,
@@ -10,6 +20,7 @@ import {
   NavigationMenuList,
   NavigationMenuTrigger,
 } from '@/components/ui/navigation-menu'
+import { ChevronDown } from 'lucide-react'
 import Image from 'next/image'
 import Link from 'next/link'
 
@@ -18,30 +29,58 @@ export async function Menu() {
     <NavigationMenu>
       <NavigationMenuList className='flex gap-10'>
         <NavigationMenuItem>
-          <Link href='/docs' legacyBehavior passHref>
+          <Link href='/' legacyBehavior passHref>
             <NavigationMenuLink>Início</NavigationMenuLink>
           </Link>
         </NavigationMenuItem>
+
         <NavigationMenuItem>
           <Link href='/docs' legacyBehavior passHref>
             <NavigationMenuLink>Biografia</NavigationMenuLink>
           </Link>
         </NavigationMenuItem>
+
         <NavigationMenuItem>
-          <Link href='/docs' legacyBehavior passHref>
-            <NavigationMenuLink>Atuação</NavigationMenuLink>
-          </Link>
+          <DropdownMenu>
+            {/* <DropdownMenu.Arrow /> */}
+            <DropdownMenuTrigger className='flex gap-2'>
+              Atuação
+              <ChevronDown size={24} />
+            </DropdownMenuTrigger>
+            <DropdownMenuContent>
+              <DropdownMenuItem>
+                <Link href='/docs' legacyBehavior passHref>
+                  Projetos de Lei
+                </Link>
+              </DropdownMenuItem>
+
+              <DropdownMenuItem>
+                <Link href='/docs' legacyBehavior passHref>
+                  Instituto Leo Maia
+                </Link>
+              </DropdownMenuItem>
+
+              <DropdownMenuItem>
+                <Link href='/docs' legacyBehavior passHref>
+                  Obras Literarias e Academia de Letras de SGP
+                </Link>
+              </DropdownMenuItem>
+            </DropdownMenuContent>
+          </DropdownMenu>
         </NavigationMenuItem>
+
         <NavigationMenuItem>
           <Link href='/docs' legacyBehavior passHref>
             <NavigationMenuLink>Notícias</NavigationMenuLink>
           </Link>
         </NavigationMenuItem>
+
         <NavigationMenuItem>
           <Link href='/docs' legacyBehavior passHref>
             <NavigationMenuLink>Galeria</NavigationMenuLink>
           </Link>
         </NavigationMenuItem>
+
         <NavigationMenuItem>
           <Link href='/docs' legacyBehavior passHref>
             <NavigationMenuLink>Contato</NavigationMenuLink>
