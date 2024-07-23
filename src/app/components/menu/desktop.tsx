@@ -1,30 +1,19 @@
-import facebookIcon from '@/app/assets/facebook-icon.svg'
-import instagramIcon from '@/app/assets/instagram-icon.svg'
-import twitterIcon from '@/app/assets/twitter-icon.svg'
-import whatsappIcon from '@/app/assets/whatsapp-icon.svg'
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
-  DropdownMenuLabel,
-  DropdownMenuSeparator,
-  DropdownMenuSub,
-  DropdownMenuSubTrigger,
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu'
 import {
   NavigationMenu,
-  NavigationMenuContent,
   NavigationMenuItem,
   NavigationMenuLink,
   NavigationMenuList,
-  NavigationMenuTrigger,
 } from '@/components/ui/navigation-menu'
 import { ChevronDown } from 'lucide-react'
-import Image from 'next/image'
 import Link from 'next/link'
 
-export async function Menu() {
+export function Desktop() {
   return (
     <NavigationMenu>
       <NavigationMenuList className='flex gap-10'>
